@@ -55,6 +55,7 @@ body {
     width: 60%;
     margin: 0 auto;
     margin-top: 20px;
+    margin-bottom: 50px;
   } 
 
   ul {
@@ -65,6 +66,10 @@ body {
     padding-top: 1px;
   }
 
+  form{
+      border-radius: 5px;
+      padding: 10px;
+  }
   .li-outer{
       padding-top: 15px;
 
@@ -106,8 +111,7 @@ body {
     margin-top: 20px;
     padding: 10px;
     color: black;
-    border-bottom: 1px solid #2098D1
- 
+    border-bottom: 4px solid #2098D1
 
   }
 
@@ -122,11 +126,10 @@ body {
     background-color: #f1f1f1;
     border-radius: 5px;
     display: inline-block;
-    height: 70px;
+    height: 60px;
     width: 200px;
-    vertical-align: center;
-    margin: auto 0;
-    border-bottom: #2098D1;
+    vertical-align: middle;
+    
   }
 
   .greeting-outer{
