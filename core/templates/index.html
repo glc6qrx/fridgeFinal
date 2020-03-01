@@ -1,11 +1,32 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h2>Home</h2>
-  <p>Your username is {{ user.get_username }}.</p>
-  <p>You should only see this page if you're successfully logged in.</p>
-  <a href="{% url 'logout'%}">Log out</a>
-  {% for i in fridge_items %}
-    <h2>{{i}}</h2>
-  {%endfor%}
+<div class="greeting-outer">
+  <div class="greeting block">
+      <p>Hello, <span class="underline">{{ user.get_username }}</span></p>
+  </div>
+</div>
+<div class="count-outer">
+  <div class="greeting block">
+    <p>There are currently <span class="underline">{{count}}</span> items in the fridge</p>
+  </div>
+</div>
+
+<div class="ul-outer">
+  <ul>
+    {% for i in fridge_items %}
+      <div class="li-outer">
+        <li>
+          <div class="itemblock">
+            <p>{{i}}</p>
+          </div>
+        </li>
+      </div>
+    {%endfor%}
+  </ul>
+</div>
+
+  
 {% endblock %}
+
+{% block logout %}<a href="{% url 'logout'%}" class="hvr-skew hvr-border-fade2" >Log out</a> {%endblock%}

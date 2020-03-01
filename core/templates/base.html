@@ -1,4 +1,4 @@
-  
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,38 +6,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="{% static '/css/main.css' %}" rel="stylesheet">
+
+
 </head>
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-          <span >Fridge</span>
-        </a>
-  
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
+  <div class="header">
+      
+      <div class="header-left">
+        <a href="/" class="logo">theFridge</a>
+        <a href="{% url 'add'%}" class="hvr-skew hvr-border-fade" style="padding-top: 15px">Add Items  <i class="fa fa-plus" style="font-size:11px;padding-bottom:2px;"></i></a>
       </div>
-  
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="{% url 'add'%}">
-            Add Items
-          </a>
-    
-        </div>
-    
+      <div class="header-right">
+        {%block logout%}{% endblock %}
       </div>
     </div>
-  </nav>
-  <div>
-    <!--<div>
-      <a href="{% url 'index'%}">Home</a>
-      <a href="{% url 'add'%}">Add Items</a>
-    </div>!-->
-    {% block content %}{% endblock %}
+    <div class="main">
+        {% block content %}{% endblock %}
+    </div>
   </div>
 </body>
 </html>

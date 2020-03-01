@@ -8,8 +8,11 @@ from .models import Item
 @login_required
 def index(request):
     items = Item.objects.all()
+    count =Item.objects.count()
+
     context = {
         'fridge_items' : items,
+        'count' : count
     }
     return render(request, 'index.html',context)
 
