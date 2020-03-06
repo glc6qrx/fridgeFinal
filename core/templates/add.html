@@ -3,12 +3,20 @@
 {% block title %}Add Items!{% endblock %}
 
 {% block content %}
-  <h2>Add Items</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit">
-  </form>
+  <div class="greeting-outer">
+      <div class="greeting block">
+          <p>Add an Item to the Fridge</span></p>
+      </div>
+    </div>
+    <div class="count-outer">
+      <div class="greeting block">
+          <form method="post">
+              {% csrf_token %}
+              {{ form }}
+              <input class="button" type="submit" value="Submit">
+          </form>
+      </div>
+    </div>
 {% endblock %}
 
 {% block logout %}<a href="{% url 'logout'%}" class="hvr-skew hvr-border-fade2" >Log out</a> {%endblock%}
