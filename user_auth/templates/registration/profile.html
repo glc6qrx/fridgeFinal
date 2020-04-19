@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Create a profile</h2>
+  <p>
+  <form action="{% url "profile" %}" method="post">{% csrf_token %}
+    {% for data in profile %}
+          First Name:
+          <input type="text" id="fname" name="fname" value={{data.first_name}}>
+          <br>
+          Last Name:
+          <input type="text" id="lname" name="lname" value={{data.last_name}}>
+          <br>
+          Email:
+          <input type="text" id="email" name="email" value={{data.email}}>
+          <br>
+          Expertise:
+          <input type="text" id="expertise" name="expertise" value={{data.expertise}}>
+          <br>
+          Major:
+          <input type="text" id="major" name="major" value={{data.major}}>
+          <br>
+          Bio:
+          <input type="text" id="bio" name="bio" value={{data.bio}}>
+          <br>
+          <input type="submit" value="Submit">
+    {% endfor %}
+  </form>
+  </p>
+{% endblock %}

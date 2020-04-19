@@ -4,7 +4,6 @@
 <div class="greeting-outer">
   <div class="greeting block">
       <p>Hello, <span class="underline">{{ user.get_username }}</span></p>
-      <p><a href="{% url 'profile' %}">{{ user.get_username }}</a></p>
   </div>
 </div>
 <div class="count-outer">
@@ -19,8 +18,7 @@
       <div class="li-outer">
         <li>
           <div class="itemblock" style="border-bottom: 1px solid black">
-            <p>{{i}}</p>
-          </div>
+		  <div>333</div>
         </li>
       </div>
     {%endfor%}
